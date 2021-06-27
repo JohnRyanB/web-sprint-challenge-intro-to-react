@@ -34,14 +34,21 @@ export default function App() {
 	}, []);
 
 	return (
-		<div className="App">
-			<h1 className="Header">React Wars: Episode 1: The Axios Menace</h1>
+		<AppContainer>
+			<h1 className="Header">React Wars: Episode IV: A New Axios</h1>
 			{char.map((cr) => {
 				return <Expander key={cr.url} info={cr} action={openDetails} />;
 			})}
 			{currentCharId && (
 				<Character charId={currentCharId} close={closeDetails} />
 			)}
-		</div>
+		</AppContainer>
 	);
 }
+
+const AppContainer = styled.div`
+	display: flex;
+	align-items: center;
+	justif-content: center;
+	flex-direction: column;
+`;
